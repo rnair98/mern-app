@@ -1,4 +1,4 @@
-/*jshint esversion: 6 */
+/*jshint esversion: 10 */
 
 const { ApolloServer } = require('apollo-server');
 const gql = require('graphql-tag');
