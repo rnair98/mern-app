@@ -23,7 +23,16 @@ const typeDefs = gql`
 
 const resolvers = {
     Query: {
-        sayHi: () => 'Hello world!'
+        async getPosts(){
+            //if query fails, server will stop. therefore error-check
+            try{
+                const posts = await Post.find();
+                return posts;
+            } catch(err){
+                throw new Error(err);
+            }
+
+        }
     }
 };
 
